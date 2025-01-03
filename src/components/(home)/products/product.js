@@ -23,7 +23,7 @@ const Product = ({ product }) => {
           <p>{product.description}</p>
           <div className="options">
             <h6>
-              {product?.sale_price? (
+              {product?.sale_price ? (
                 <>
                   <span>{numberFormat(product.sale_price)}</span>
                   <del>{numberFormat(product.price)}</del>

@@ -14,7 +14,10 @@ const ProductsTab = ({ tabList, tabPanel }) => {
           <h2>منو محصولات</h2>
         </div>
 
-        <Tabs selectedTabClassName={'active'}>
+        <Tabs selectedTabClassName={"active"}>
+          {/* kole data e ma az jomle ui va list mahsolat dakhele tabs hast */}
+
+          {/* bayad dakhele tablist ul e ma bashe  */}
           <TabList>
             <ul className="filters_menu">
               {tabList?.map((item, index) => {
@@ -26,13 +29,14 @@ const ProductsTab = ({ tabList, tabPanel }) => {
           <div className="filters-content">
             {tabPanel?.map((elem, index) => {
               return (
+                // data hayi ke gharare tekrar beshe dakhele tabPanel gharar migire
                 <TabPanel key={index}>
                   <div className="row grid">
                     {elem.map((product) => {
                       return (
                         <div key={product.id} className="col-sm-6 col-lg-4">
                           {/* dar zire inja dive classe box bod ke chob hame ja gharare azash estefade knim miaym va componentesh miknim va baresh midarim va esme component ro producte khali mizarim  va miaym tabPanele ke datae kolie ma hast ro bar migardonim  
-                     dar marhaleye baad gharare tabPanel tekrar beshe baraye hamin miaym zire filters-content map miznim roye tabPanel */}
+                          dar marhaleye baad gharare tabPanel tekrar beshe baraye hamin miaym zire filters-content map miznim roye tabPanel */}
 
                           <Product product={product} />
                         </div>

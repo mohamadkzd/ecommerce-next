@@ -1,7 +1,7 @@
 import BootstrapClinet from "@/components/libraries/Bootstrap";
 import "./globals.css";
 import Header from "@/components/layout/header/header";
-
+import Toastify from "@/components/libraries/toastify"
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
@@ -9,6 +9,7 @@ export default function RootLayout({ children }) {
         <Header/>
         {children}
         <BootstrapClinet/>
+        <Toastify/>
       </body>
     </html>
   );
