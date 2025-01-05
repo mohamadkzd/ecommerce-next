@@ -1,6 +1,6 @@
-import About from "@/components/(home)/about/about";
+import AboutComponents from "@/components/(home)/about/about";
 import CardSection from "@/components/(home)/card-section/cardSection";
-import Contact from "@/components/(home)/contact/contact";
+import ContactComponents from "@/components/(home)/contact/contact";
 import ProductsTab from "@/components/(home)/products/ProductsTab";
 import { getFetch } from "@/lib/config/fetcher";
 
@@ -12,8 +12,8 @@ export default async function Home() {
     <>
       <CardSection />
       <ProductsTab tabList={productsTab.tabList} tabPanel={productsTab.tabPanel}/>
-      <About/>
-      <Contact/>
+      <AboutComponents/>
+      <ContactComponents/>
     </>
   );
 }

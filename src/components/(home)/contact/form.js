@@ -10,10 +10,19 @@ export default function FormContact() {
   const [state, formAction] = useFormState(create, {});
   //   console.log(formAction);
 
+
    useEffect(()=>{
-     if (state?.status==="error") {
-        toast.error(state.message)
-     }
+    // console.log("stateLog",state);
+
+    //  if (state?.status==="error") {
+    //     toast.error(state.message)
+    //  }else {
+    //   toast.success(state.message)
+    //  }
+
+    // raveshe ason tre code bala ****************   |>
+
+    toast(state?.message ,{type:`${state?.status}`})
      
    },[state])
   return (

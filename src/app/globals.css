@@ -1307,7 +1307,7 @@ a:focus {
   }
 }
 
-.Toasify__toast-body{
+.Toastify__toast-body{
   font-family: "vazir",sans-serif !important;
   direction: rtl;
 }

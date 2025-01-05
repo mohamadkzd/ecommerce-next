@@ -1,6 +1,6 @@
 import Image from "next/image";
 import AboutImage from "../../../../public/images/home/about/about-img.png"
-const About = () => {
+const AboutComponents = () => {
     return ( 
         <section className="about_section layout_padding">
         <div className="container">
@@ -36,4 +36,4 @@ const About = () => {
      );
 }
  
-export default About;
+export default AboutComponents;

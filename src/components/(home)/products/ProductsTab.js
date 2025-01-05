@@ -28,14 +28,14 @@ const ProductsTab = ({ tabList, tabPanel }) => {
 
           <div className="filters-content">
             {tabPanel?.map((elem, index) => {
-              console.log("elem1",elem);
+              // console.log("elem1",elem);
               
               return (
                 // data hayi ke gharare tekrar beshe dakhele tabPanel gharar migire
                 <TabPanel key={index}>
                   <div className="row grid">
                     {elem.map((product) => {
-                      console.log("elem2",product);
+                      // console.log("elem2",product);
                       
                       return (
                         <div key={product.id} className="col-sm-6 col-lg-4">
