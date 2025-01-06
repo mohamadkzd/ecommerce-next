@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 const Header = () => {
   const pathName = usePathname();
-  console.log(pathName);
+  // console.log(pathName);
 
   return (
     <div className={`${pathName === "/" ? "" : "sub_page"}`}>

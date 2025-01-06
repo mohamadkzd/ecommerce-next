@@ -28,8 +28,7 @@ const ProductsTab = ({ tabList, tabPanel }) => {
 
           <div className="filters-content">
             {tabPanel?.map((elem, index) => {
-              // console.log("elem1",elem);
-              
+              // console.log("elem1",elem);     
               return (
                 // data hayi ke gharare tekrar beshe dakhele tabPanel gharar migire
                 <TabPanel key={index}>
