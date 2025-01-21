@@ -1311,3 +1311,9 @@ a:focus {
   font-family: "vazir",sans-serif !important;
   direction: rtl;
 }
+
+.resend-otp-btn{
+  position: absolute;
+  left: 15px;
+  bottom: 16px;
+}

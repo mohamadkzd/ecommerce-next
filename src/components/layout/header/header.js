@@ -4,9 +4,13 @@ import Image from "next/image";
 import ImageHero from "../../../../public/images/home/header/hero-bg.jpg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useContext } from "react";
+import AuthContext from "@/context/authContext";
 const Header = () => {
   const pathName = usePathname();
   // console.log(pathName);
+
+  const { user } = useContext(AuthContext);
 
   return (
     <div className={`${pathName === "/" ? "" : "sub_page"}`}>
@@ -39,22 +43,38 @@ const Header = () => {
                 id="navbarSupportedContent"
               >
                 <ul className="navbar-nav mx-auto">
-                  <li className={`${pathName=="/" ?"nav-item active":"nav-item"}`}>
+                  <li
+                    className={`${
+                      pathName == "/" ? "nav-item active" : "nav-item"
+                    }`}
+                  >
                     <Link href="/" className="nav-link">
                       صفحه اصلی
                     </Link>
                   </li>
-                  <li className={`${pathName=="/menu" ?"nav-item active":"nav-item"}`}>
+                  <li
+                    className={`${
+                      pathName == "/menu" ? "nav-item active" : "nav-item"
+                    }`}
+                  >
                     <Link href="/menu" className="nav-link">
                       منو
                     </Link>
                   </li>
-                  <li className={`${pathName=="/about" ?"nav-item active":"nav-item"}`}>
+                  <li
+                    className={`${
+                      pathName == "/about" ? "nav-item active" : "nav-item"
+                    }`}
+                  >
                     <Link href="/about" className="nav-link">
                       درباره ما
                     </Link>
                   </li>
-                  <li className={`${pathName=="/contact" ?"nav-item active":"nav-item"}`}>
+                  <li
+                    className={`${
+                      pathName == "/contact" ? "nav-item active" : "nav-item"
+                    }`}
+                  >
                     <Link href="/contact" className="nav-link">
                       تماس باما
                     </Link>
@@ -70,9 +90,17 @@ const Header = () => {
                       3
                     </span>
                   </Link>
-                  <Link href={`/auth/login`} className="btn-auth">
-                    ورود
-                  </Link>
+
+                  {user ? (
+                    <Link href={`/profile`} className="btn-auth">
+                      پروفایل
+                    </Link>
+                  ) : (
+                    <Link href={`/auth/login`} className="btn-auth">
+                      ورود
+                    </Link>
+                    
+                  )}
                 </div>
               </div>
             </nav>

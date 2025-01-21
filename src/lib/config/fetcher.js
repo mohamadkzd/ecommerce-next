@@ -1,9 +1,10 @@
-const getFetch = async (url) => {
+const getFetch = async (url,headers={}) => {
   const res = await fetch(`http://localhost:8000/api${url}`, {
     cache: "no-store",
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/json",
+      "Accept": "application/json",
+      ...headers
     },
   });
   if (res.ok) {
@@ -14,18 +15,19 @@ const getFetch = async (url) => {
   }
 };
 
-const postFetch = async (url, body) => {
+const postFetch = async (url, body, headers = {}) => {
   const res = await fetch(`http://localhost:8000/api${url}`, {
-    method:"POST",
+    method: "POST",
     cache: "no-store",
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/json",
+      "Accept": "application/json",
+      ...headers
     },
     body: JSON.stringify(body),
   });
   const data = await res.json();
-  return data
+  return data;
 };
 
 export { getFetch, postFetch };

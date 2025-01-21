@@ -34,3 +34,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+<!-- توضیحات راجبه context در پروژه
+
+ما بعد از 2 مرحله ی لاگین مرحله ی 1 : شماره تماس و مرجله ی 3 ا تی پی : اگه همچی درست باشد و کاربر قبلا لاگین گرده باشه و دیتاش وجود داشته باشه در ریسپانس به ما اطلاعات کاربر رو بر میگردونه و ما برای اینکه به اطلاعات کاربر 
+بتونیم در همه جا دسترسی داشته باشیم باید بیایم از کانتکس استفاده کنیم
+
+پس اومدیم در پروژه در فایل س ار سی  فولدره کانتکس رو ساختیم و داخلش به فایل با اسمه آس کانتکس قرار دادیم
+ -->
+
+ <!-- در مرحله ی اول ما کریت کانتکس رو صدا میزنیم از ریکت داخل آس کانتکس و میایم کامپوننتشو میسازیم و ما اولین چیزی که میخوایم استیتی که یوزر رو داخلش بریزیم و یک تابع ایی که داخلش این عملیات را انجام بدیم که ورودی یوزر رو بگیره و داخل تابع استیت اون ورودی رو بهش پای بدیم  -->
+
+
+
+ <!-- cookies() be in shekl az next/headers fght dar server component ejra mishavad -->

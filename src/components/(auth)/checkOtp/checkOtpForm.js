@@ -1,18 +1,26 @@
 "use client";
 
 import { useFormState } from "react-dom";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { toast } from "react-toastify";
 
 import SubmitBtn from "@/ui/submitBtn/submitBtn";
 import { checkOtp } from "../../../../actions/auth";
+import AuthContext from "@/context/authContext";
+import ResendOtpButton from "./resendOtpButton";
+import { useRouter } from "next/navigation";
 
 const CheckOtpForm = () => {
   const [stateOtp, formActionOtp] = useFormState(checkOtp, {});
-
+  const { loginContext } = useContext(AuthContext);
+  const router=useRouter()
   useEffect(() => {
     //dar contact form tozih dade shode be sorat comment
     toast(stateOtp?.message, { type: `${stateOtp?.status}` });
+    if (stateOtp?.status === "success") {
+      loginContext(stateOtp?.user);
+router.push("/")
+    }
   }, [stateOtp]);
 
   return (
@@ -26,6 +34,7 @@ const CheckOtpForm = () => {
 
           <SubmitBtn title="تایید" />
         </form>
+        <ResendOtpButton/>
       </div>
     </div>
   );
