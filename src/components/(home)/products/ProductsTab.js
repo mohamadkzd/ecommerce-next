@@ -24,7 +24,7 @@ const ProductsTab = ({ tabList, tabPanel }) => {
                 return <Tab key={index}>{item}</Tab>;
               })}
             </ul>
-          </TabList>
+          </TabList> 
 
           <div className="filters-content">
             {tabPanel?.map((elem, index) => {
@@ -34,8 +34,7 @@ const ProductsTab = ({ tabList, tabPanel }) => {
                 <TabPanel key={index}>
                   <div className="row grid">
                     {elem.map((product) => {
-                      // console.log("elem2",product);
-                      
+                      // console.log("elem2",product); 
                       return (
                         <div key={product.id} className="col-sm-6 col-lg-4">
                           {/* dar zire inja dive classe box bod ke chob hame ja gharare azash estefade knim miaym va componentesh miknim va baresh midarim va esme component ro producte khali mizarim  va miaym tabPanele ke datae kolie ma hast ro bar migardonim  

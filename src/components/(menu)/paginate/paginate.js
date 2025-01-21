@@ -1,17 +1,20 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const PaginateComponents = ({ links }) => {
   const pathName = usePathname();
   const router = useRouter();
   console.log(pathName);
 
+  // dalile khate zir video filter jostejo baraye rafe bag ha hast ke age chizi az search bod dakhelesh hazf nkne 
+  const searchParams=useSearchParams()
+
   const handlePage = (page) => {
     // yeki az ravesh ha in ast va yek raveshe digar mitonim ba js pure benevisim
     //  router.replace(`${pathName}?page=${page}`)
 
-    const params = new URLSearchParams();
+    const params = new URLSearchParams(searchParams);
     params.set("page", page);
     router.replace(`${pathName}?${params.toString()}`);
   };

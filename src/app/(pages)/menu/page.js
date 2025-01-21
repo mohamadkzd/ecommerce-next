@@ -2,6 +2,7 @@ import CategoriesListComponents from "@/components/(menu)/categoriesList/categor
 import LoadingProducts from "@/components/(menu)/loading/loading";
 import ProductsListComponents from "@/components/(menu)/productsList/productsList";
 import SearchComponents from "@/components/(menu)/search/search";
+import Sort from "@/components/(menu)/sort/sort";
 import { getFetch } from "@/lib/config/fetcher";
 import { Suspense } from "react";
 
@@ -9,7 +10,10 @@ const Menu = async ({ searchParams }) => {
   const categories = await getFetch("/categories");
   //   console.log("searchParams",searchParams);
   const params = new URLSearchParams(searchParams);
-//   console.log(params.toString());
+  // console.log(params.toString());
+
+// dar marhaleye aval ma componente product list ra sakhtim sepas omadim ba estefade az component product ke dar (home) sakhtim ro gharar dadim va bayad behesh yek props ba esme product pass bdim pas mogheye map krdn be jaye elem behesh product ro dadim ke product ham dakhele productListComponent gharar migire ,
+// dakhele productList component product ro darim va ham paginate baraye safheye 2om mahsolat
 
   return (
     <section className="food_section layout_padding">
@@ -21,49 +25,8 @@ const Menu = async ({ searchParams }) => {
             {/* category list omadim component kardim */}
             <CategoriesListComponents categories={categories} />
             <hr />
-            <div>
-              <label className="form-label">مرتب سازی</label>
-              <div className="form-check my-2">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="flexRadioDefault"
-                />
-                <label className="form-check-label cursor-pointer">
-                  بیشترین قیمت
-                </label>
-              </div>
-              <div className="form-check my-2">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="flexRadioDefault"
-                />
-                <label className="form-check-label cursor-pointer">
-                  کمترین قیمت
-                </label>
-              </div>
-              <div className="form-check my-2">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="flexRadioDefault"
-                />
-                <label className="form-check-label cursor-pointer">
-                  پرفروش ترین
-                </label>
-              </div>
-              <div className="form-check my-2">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="flexRadioDefault"
-                />
-                <label className="form-check-label cursor-pointer">
-                  با تخفیف
-                </label>
-              </div>
-            </div>
+            {/* filtere bishtrin kamtrin */}
+            <Sort/>
           </div>
 
           <div className="col-sm-12 col-lg-9">

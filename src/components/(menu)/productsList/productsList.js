@@ -4,6 +4,7 @@ import PaginateComponents from "../paginate/paginate";
 
 const ProductsListComponents = async ({params}) => {
   const data = await getFetch(`/menu?${params}`);
+  
   return (
     <>
       <div className="row gx-3">

@@ -15,4 +15,8 @@ const handelError = (message) => {
   return message;
 };
 
-export { numberFormat, handelError };
+const salePercent = (price, salePrice) => {
+  return Math.round(((price - salePrice) / price) * 100);
+};
+
+export { numberFormat, handelError, salePercent };

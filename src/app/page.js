@@ -8,6 +8,7 @@ export default async function Home() {
  const productsTab= await getFetch("/products/products-tabs")
 //  console.log("productsTab",productsTab);
  
+// tamame safahat manteghi hast va safheye product dar vaghe joziat detail product hast ke single haye har safhe ro neshon mide 
   return (
     <>
       <CardSection />

@@ -1,5 +1,6 @@
 import { numberFormat } from "@/lib/helper/helper";
 import Image from "next/image";
+import Link from "next/link";
 
 const Product = ({ product }) => {
   // console.log("tabPanelTest",tabPanel);
@@ -19,7 +20,9 @@ const Product = ({ product }) => {
           />
         </div>
         <div className="detail-box">
-          <h5>{product.name}</h5>
+          <Link href={`/products/${product.slug}`}>
+            <h5>{product.name}</h5>
+          </Link>
           <p>{product.description}</p>
           <div className="options">
             <h6>
