@@ -13,13 +13,13 @@ import { useRouter } from "next/navigation";
 const CheckOtpForm = () => {
   const [stateOtp, formActionOtp] = useFormState(checkOtp, {});
   const { loginContext } = useContext(AuthContext);
-  const router=useRouter()
+  const router = useRouter();
   useEffect(() => {
     //dar contact form tozih dade shode be sorat comment
     toast(stateOtp?.message, { type: `${stateOtp?.status}` });
     if (stateOtp?.status === "success") {
       loginContext(stateOtp?.user);
-router.push("/")
+      router.push("/");
     }
   }, [stateOtp]);
 
@@ -34,7 +34,7 @@ router.push("/")
 
           <SubmitBtn title="تایید" />
         </form>
-        <ResendOtpButton/>
+        <ResendOtpButton />
       </div>
     </div>
   );
