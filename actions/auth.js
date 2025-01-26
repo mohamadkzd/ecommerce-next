@@ -180,4 +180,26 @@ async function me() {
   }
 }
 
-export { login, checkOtp, me, resendOtp };
+async function logout() {
+  const token = cookies().get("token");
+
+  const data = await postFetch(
+    "/auth/logout",
+    {},
+    { Authorization: `Bearer ${token.value}` }
+  );
+  // console.log("testData", data);
+  // vaghti data dorost post shavad samte server va status 200 bar gardone responsi ke bar migardone login token hast ke yek meghdari dare be sorat strin login_token:"fdsfsdf"
+  if (data.status === "success") {
+    cookies().delete('token')
+    return {
+      success: "you are logged out",
+    };
+  } else {
+    return {
+      error: "User Forbidden",
+    };
+  }
+}
+
+export { login, checkOtp, me, resendOtp,logout };

@@ -24,9 +24,14 @@ export const AuthProvider = ({ children }) => {
     setUser(user);
     // console.log("Auth Context",user);
   };
+
+  const logoutContext = () => {
+    setUser(null);
+    // console.log("Auth Context",user);
+  };
   
   return (
-    <AuthContext.Provider value={{ user, loginContext }}>
+    <AuthContext.Provider value={{ user, loginContext,logoutContext }}>
       {children}
     </AuthContext.Provider>
   );

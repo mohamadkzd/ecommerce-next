@@ -23,7 +23,7 @@ const Header = () => {
           <div className="container">
             <nav className="navbar navbar-expand-lg custom_nav-container">
               <Link href="/" className="navbar-brand">
-                <span>webprog.io</span>
+                <span>KZDDEV</span>
               </Link>
 
               <button
