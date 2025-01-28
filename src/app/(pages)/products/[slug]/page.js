@@ -1,4 +1,5 @@
 import Product from "@/components/(home)/products/product";
+import ShoppingCart from "@/components/(home)/products/shoppingCart";
 import { getFetch } from "@/lib/config/fetcher";
 import { numberFormat, salePercent } from "@/lib/helper/helper";
 import Image from "next/image";
@@ -13,7 +14,7 @@ const ProductDetail = async ({ params }) => {
   //   joziat mahsolat end point {{baseUrl}}/products/:slug
   const randomProduct = await getFetch("/random-products?count=4");
   // baghie mahsolat end point {{baseUrl}}/random-products?count=4
-//   end pointesh toye backEnd tarif shode va age dasti count ro taghir bdim masaln 5 , 5 ta data random ba migardone 
+  //   end pointesh toye backEnd tarif shode va age dasti count ro taghir bdim masaln 5 , 5 ta data random ba migardone
   console.log(randomProduct);
 
   return (
@@ -51,14 +52,9 @@ const ProductDetail = async ({ params }) => {
                   </h5>
                   <p>{productDetail.description}</p>
 
-                  <div className="mt-5 d-flex">
-                    <button className="btn-add">افزودن به سبد خرید</button>
-                    <div className="input-counter ms-4">
-                      <span className="plus-btn">+</span>
-                      <div className="input-number">1</div>
-                      <span className="minus-btn">-</span>
-                    </div>
-                  </div>
+                 {/* sabad kharid baraye inke client nashe omadim componentesh kardim dakhele compoennte product home */}
+                 <ShoppingCart product={productDetail}/>
+
                 </div>
 
                 {/* start slider */}
@@ -147,7 +143,7 @@ const ProductDetail = async ({ params }) => {
       <section className="food_section my-5">
         <div className="container">
           <div className="row gx-3">
-            {randomProduct.map((product,index) => {
+            {randomProduct.map((product, index) => {
               return (
                 <div key={index} className="col-sm-6 col-lg-3">
                   <Product product={product} />
